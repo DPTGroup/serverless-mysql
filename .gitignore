@@ -11,5 +11,8 @@ dump.rdb
 .nyc_output
 coverage
 
+# IDE
+.idea
+
 # Serverless
 .serverless

@@ -192,9 +192,9 @@ module.exports = (params) => {
             resetClient() // reset the client
             reject(err) // reject the promise with the error
           } else if (
-            err && (/^PROTOCOL_ENQUEUE_AFTER_/.test(err.code) 
-            || err.code === 'PROTOCOL_CONNECTION_LOST' 
-            || err.code === 'EPIPE')
+            err && (/^PROTOCOL_ENQUEUE_AFTER_/.test(err.code)
+            || err.code === 'PROTOCOL_CONNECTION_LOST'
+            || err.code === 'EPIPE' || err.code === 'ER_LOCK_DEADLOCK')
           ) {
             resetClient() // reset the client
             return resolve(query(...args)) // attempt the query again
